@@ -209,11 +209,23 @@ class Carousel extends Component<CarouselProps, CarouselState> {
     }
   };
 
-  prev = () => {
+  prev = (e) => {
+    console.log('e exists?', e);
+    if (e) {
+      console.log('e exists!');
+      e.preventDefault();
+			e.stopPropagation();
+    }
     this.track.prev();
     this.focusViewFrame();
   };
-  next = () => {
+  next = (e) => {
+    console.log('e exists?', e);
+    if (e) {
+      console.log('e exists!');
+      e.preventDefault();
+			e.stopPropagation();
+    }
     this.track.next();
     this.focusViewFrame();
   };
